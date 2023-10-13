@@ -1,0 +1,184 @@
+@charset "UTF-8";
+body {
+  font-family: "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+  line-height: 1.4rem;
+}
+/* hederのCSS */
+h1{
+  font-size: 1.8rem;
+  font-weight: normal;
+  text-align: center;
+  margin: 20px 0px 0px;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
+a:hover{
+  opacity: 0.6;
+}
+nav ul{
+  list-style-type: none;
+  font-size: 0.9rem;
+  padding: 0px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  padding: 10px 0;
+}
+nav ul li{
+  margin-left: 20px;
+}
+/* 指定した最初の要素にだけ装飾を適用させる疑似クラス：:first-of-type */
+nav ul li:first-of-type{
+  margin-left: 0px;
+}
+nav ul .icon {
+  width: 20px;
+  height: 20px;
+}
+/* メインビジュアルのCSS */
+#mainvisual img{
+  width: 100%;
+  height: 420px;
+  max-width: 600PX;
+  object-fit: cover;
+}
+#mainvisual{
+  text-align: center;
+}
+/* AboutセクションのCSS */
+section{
+  padding: 0 4%;
+  margin-bottom: 70px;
+}
+h2{
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 40px;
+}
+section ul{
+  list-style-type: none;
+  padding-left: 0px;
+  margin-bottom: 30px;
+}
+section ul li:first-of-type{
+  margin-bottom: 30px;
+}
+/* Galleryセクションをコーディング */
+#gallery ul{
+  list-style-type: none;
+  padding-left: 0px;
+}
+#gallery ul li img {
+  width: 100%;
+}
+#gallery ul li{
+  margin-bottom: 20PX;
+}
+#gallery ul li:last-of-type{
+  margin-bottom: 0px;
+}
+/* Contactセクションをコーディング */
+#contact .label_wrap{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+}
+#contact .label_wrap input,
+#contact .label_wrap textarea {
+  border: solid 1px #c8c8c8;
+  padding: 10px;
+}
+#contact .label_wrap textarea {
+  height: 10rem;
+}
+#contact .submit_button{
+  text-align: center;
+  margin-top: 30px;
+}
+#contact .submit_button input{
+  background-color: #000000;
+  color: #ffffff;
+  border: 1px solid #000000;
+  width: 200px;
+  padding: 15px 0px;
+  cursor: pointer;
+}
+#contact .submit_button :hover{
+  background-color: #ffffff;
+  color: #000000;
+}
+/* フッター構築　*/
+#footer{
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.5rem;
+  text-align: center;
+  padding: 5px 10px;
+}
+#footer p{
+  margin: 0;
+}
+/* PC画面にも適応する。画面幅が601以上の時に適応 */
+@media screen and (min-width:601px){
+  #header {
+    display: flex;
+    align-items:  center;
+    justify-content: space-between;
+    max-width: 960px;
+    width: 100%;
+    height: 270px;
+    margin: 0 auto;
+    padding: 0 4%;
+    box-sizing: border-box;
+  }
+  h1{
+    margin-top: 0px;
+  }
+  nav ul li{
+    margin-left: 40px;
+  }
+  #mainvisual img{
+    max-width: 1920px;
+    /* width: 100%; これはSP版ですでに指定しているため不要*/
+  }
+  #mainvisual{
+    margin-bottom: 80px;
+  }
+  section{
+    max-width: 960px;
+    width: 100%;
+    box-sizing: border-box;
+    margin: 0 auto 180px;
+  }
+  h2{
+    margin-bottom: 65px;
+  }
+  #gallery ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #gallery ul li{
+    flex-basis: 30%;
+  }
+  #contact .label_wrap{
+    flex-direction: row;
+  }
+  #contact .label_wrap label{
+    flex-basis: 15%;
+    line-height: 40px;
+  }
+  #contact .label_wrap input,
+  #contact .label_wrap textarea{
+    width: 85%;
+  }
+  /* これはＳＰ版に適応しても問題ないのでレスポンシブデザインの中に作成しない
+  #contact .submit_button input:hover{
+   cursor: pointer; 
+  }*/
+  footer {
+    padding: 10px 20px;
+  }
+}
